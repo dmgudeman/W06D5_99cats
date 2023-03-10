@@ -7,8 +7,8 @@ class Cat < ApplicationRecord
     CAT_COLORS = ['red', 'blue', 'tabby']
 
     def no_future_dates
-        if :birth_date > :present_day
-            errors.add(:birth_date, 'choose date not in future')
+        if birth_date > Date.today 
+            errors.add(:birth_date, 'is incorrect, choose date not in future')
         end 
     end
 
@@ -19,7 +19,7 @@ class Cat < ApplicationRecord
 
 
     def how_old
-        @birth_date.time_ago_in_words(from_time)
+        time_ago_in_words(birth_date)
     end
 
 end
