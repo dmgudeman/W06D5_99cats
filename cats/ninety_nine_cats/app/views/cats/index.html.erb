@@ -1,0 +1,9 @@
+<h1> index_page </h1>
+
+<% @cats.each do |cat| %>
+<ul> 
+<li> <%= cat.name%> </li>
+<li> <%= cat.birth_date%> </li>
+<li> <%= cat.sex%> </li>
+</ul>
+<% end %>
