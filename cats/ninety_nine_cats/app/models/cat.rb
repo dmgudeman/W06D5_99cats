@@ -4,7 +4,8 @@ require 'action_view'
 class Cat < ApplicationRecord 
     include ActionView::Helpers::DateHelper
 
-    CAT_COLORS = ['red', 'blue', 'tabby']
+    CAT_COLORS = ['red', 'blue', 'tabby'].freeze
+
 
     def no_future_dates
         if birth_date > Date.today 
